@@ -2,6 +2,11 @@
 # yarn lockfile v1
 
 
+"@types/argon2-browser@^1.12.0":
+  version "1.12.0"
+  resolved "https://registry.yarnpkg.com/@types/argon2-browser/-/argon2-browser-1.12.0.tgz#b9c3c4a996a80cb3c4f5ad097e8d0debda459072"
+  integrity sha512-ZPpKOoLuyXf+dKUJKcbUAzAajnJ1+ABXqSyHtsjfDaKhdHh19wXNWC3/hpDdzIO8ykiSONnGCWy38juDZVocvg==
+
 "@webassemblyjs/ast@1.9.0":
   version "1.9.0"
   resolved "https://registry.yarnpkg.com/@webassemblyjs/ast/-/ast-1.9.0.tgz#bd850604b4042459a5a41cd7d338cbed695ed964"
@@ -2418,6 +2423,11 @@ typedarray@^0.0.6:
   version "0.0.6"
   resolved "https://registry.yarnpkg.com/typedarray/-/typedarray-0.0.6.tgz#867ac74e3864187b1d3d47d996a78ec5c8830777"
   integrity sha1-hnrHTjhkGHsdPUfZlqeOxciDB3c=
+
+typescript@^3.9.6:
+  version "3.9.6"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.9.6.tgz#8f3e0198a34c3ae17091b35571d3afd31999365a"
+  integrity sha512-Pspx3oKAPJtjNwE92YS05HQoY7z2SFyOpHo9MqJor3BXAGNaPUs83CuVp9VISFkSjyRfiTpmKuAYGJB7S7hOxw==
 
 union-value@^1.0.0:
   version "1.0.1"

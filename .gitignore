@@ -1,2 +1,3 @@
 dist
 node_modules
+src/argon2-demo-webpack.js

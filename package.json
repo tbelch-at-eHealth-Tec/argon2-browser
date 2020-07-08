@@ -5,6 +5,8 @@
   "description": "",
   "main": "argon2-demo-webpack.js",
   "scripts": {
+    "prestart": "yarn compile",
+    "compile": "tsc src/argon2-demo-webpack.ts",
     "start": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -16,6 +18,8 @@
     "webpack": "^4.38.0"
   },
   "devDependencies": {
+    "@types/argon2-browser": "^1.12.0",
+    "typescript": "^3.9.6",
     "webpack-cli": "^3.3.6"
   }
 }
