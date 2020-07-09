@@ -4,7 +4,7 @@ const path = require("path");
 module.exports = function override(config, env) {
   fs.writeFileSync(path.resolve(__dirname, "webpack-config.before.json"), JSON.stringify(config, null, 2));
 
-  const extended = applyTelerikConfig(config);
+  const extended = applyArgon2BrowserConfig(config);
 
   fs.writeFileSync(path.resolve(__dirname, "webpack-config.after.json"), JSON.stringify(extended, null, 2));
   return extended;

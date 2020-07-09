@@ -108,8 +108,7 @@
       ".js",
       ".json",
       ".web.jsx",
-      ".jsx",
-      ".wasm"
+      ".jsx"
     ],
     "alias": {
       "react-native": "react-native-web"
@@ -344,7 +343,6 @@
             "exclude": [
               {},
               {},
-              {},
               {}
             ],
             "options": {
@@ -355,15 +353,13 @@
       },
       {
         "test": {},
-        "include": "/home/tobias/workspace/evaluation/argon2-browser/src",
-        "use": [
-          {
-            "loader": "/home/tobias/workspace/evaluation/argon2-browser/node_modules/wasm-loader/index.js",
-            "options": {}
-          }
-        ]
+        "loaders": [
+          "base64-loader"
+        ],
+        "type": "javascript/auto"
       }
-    ]
+    ],
+    "noParse": {}
   },
   "plugins": [
     {
@@ -448,7 +444,10 @@
     "http2": "empty",
     "net": "empty",
     "tls": "empty",
-    "child_process": "empty"
+    "child_process": "empty",
+    "__dirname": false,
+    "Buffer": false,
+    "process": false
   },
   "performance": false
 }
