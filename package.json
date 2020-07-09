@@ -1,25 +1,40 @@
 {
-  "name": "argon2-webpack",
+  "name": "argon2-browser",
+  "version": "0.1.0",
   "private": true,
-  "version": "1.0.0",
-  "description": "",
-  "main": "index.html",
-  "scripts": {
-    "prestart": "yarn compile",
-    "compile": "tsc --lib dom,dom.iterable,esnext,ES2015 src/index.ts",
-    "start": "webpack",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "",
-  "license": "MIT",
   "dependencies": {
-    "argon2-browser": "^1.6.0",
-    "base64-loader": "^1.0.0",
-    "webpack": "^4.38.0"
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.3.2",
+    "@testing-library/user-event": "^7.1.2",
+    "argon2-browser": "^1.13.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "react-scripts": "3.4.1"
+  },
+  "scripts": {
+    "start": "react-app-rewired start",
+    "build": "react-app-rewired build",
+    "test": "react-app-rewired test"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   },
   "devDependencies": {
-    "@types/argon2-browser": "^1.12.0",
-    "typescript": "^3.9.6",
-    "webpack-cli": "^3.3.6"
+    "base64-loader": "^1.0.0",
+    "path": "^0.12.7",
+    "react-app-rewired": "^2.1.6",
+    "wasm-loader": "^1.3.0"
   }
 }
