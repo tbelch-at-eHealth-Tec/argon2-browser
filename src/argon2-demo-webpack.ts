@@ -1,33 +1,78 @@
 import * as argon2 from "argon2-browser";
 
-console.log("argon2", argon2);
+export function hash(value: string, salt: string, root: HTMLElement, toVerify: string[] = []) {
+  root.innerText += `Value: ${value}\n` + `salt: ${salt}\n`;
+  argon2
+    .hash({
+      pass: value,
+      salt,
+      type: argon2.ArgonType.Argon2i,
+      time: 2,
+      parallelism: 2,
+    })
+    .then((hash: any) => {
+      const text = `Encoded: ${hash.encoded}`;
+      if (root) {
+        root.innerText += `${text}\n`;
+      } else {
+        console.log(text);
+      }
 
-argon2
-  .hash({
-    pass: "p@ssw0rd",
-    salt: "somesalt",
-  })
-  .then((hash: any) => {
-    const root = document.querySelector("pre");
-    if (root) {
-      root.innerText = `Encoded: ${hash.encoded}\n` + `Hex: ${hash.hashHex}\n`;
-    } else {
-      console.log(`Encoded: ${hash.encoded}\n` + `Hex: ${hash.hashHex}\n`);
-    }
+      argon2
+        .verify({
+          pass: value,
+          encoded: hash.encoded,
+        })
+        .then(() => {
+          const text = "Verified!";
+          if (root) {
+            root.innerText += `${text}\n`;
+          } else {
+            console.log(text);
+          }
+        })
+        .catch((e) => {
+          const text = `Verification failed! ${e.message}`;
+          if (root) {
+            root.innerText += `${text}\n`;
+          } else {
+            console.error(text);
+          }
+          console.error(e);
+        });
 
-    argon2
-      .verify({
-        pass: "p@ssw0rd",
-        encoded: hash.encoded,
-      })
-      .then(() => {
-        const root = document.querySelector("pre");
-        if (root) {
-          root.innerText += "Verified OK";
-        } else {
-          console.log("Verified OK");
-        }
-      })
-      .catch((e) => console.error("Error: ", e));
-  })
-  .catch((e) => console.error("Error: ", e));
+      toVerify.forEach((encoded, i) => {
+        argon2
+          .verify({
+            pass: value,
+            encoded,
+          })
+          .then(() => {
+            const text = `Verification (${i}) of ${encoded} was successful!`;
+            if (root) {
+              root.innerText += `${text}\n`;
+            } else {
+              console.log(text);
+            }
+          })
+          .catch((e) => {
+            const text = `Verification (${i}) of ${encoded} failed! ${e.message}`;
+            if (root) {
+              root.innerText += `${text}\n`;
+            } else {
+              console.error(text);
+            }
+            console.error(e);
+          });
+      });
+    })
+    .catch((e) => {
+      const text = `Encoding failed! ${e.message}`;
+      if (root) {
+        root.innerText += `${text}\n`;
+      } else {
+        console.error(text);
+      }
+      console.error(e);
+    });
+}

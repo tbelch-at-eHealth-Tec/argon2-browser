@@ -3,10 +3,10 @@
   "private": true,
   "version": "1.0.0",
   "description": "",
-  "main": "argon2-demo-webpack.js",
+  "main": "index.html",
   "scripts": {
     "prestart": "yarn compile",
-    "compile": "tsc src/argon2-demo-webpack.ts",
+    "compile": "tsc --lib dom,dom.iterable,esnext,ES2015 src/index.ts",
     "start": "webpack",
     "test": "echo \"Error: no test specified\" && exit 1"
   },

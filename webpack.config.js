@@ -12,12 +12,13 @@ const path = require("path");
 // I'd be happy if you let me know that it's no longer needed!
 module.exports = {
   mode: "production",
-  entry: "./src/argon2-demo-webpack.js",
+  entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "dist"),
     publicPath: "dist/",
     filename: "bundle.js",
   },
+  devtool: "source-map",
   // We're using different node.js modules in our code,
   // this prevents WebPack from failing on them or embedding
   // polyfills for them into the bundle.
