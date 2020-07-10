@@ -1,22 +1,22 @@
 {
-  "mode": "development",
-  "bail": false,
-  "devtool": "cheap-module-source-map",
+  "mode": "production",
+  "bail": true,
+  "devtool": "source-map",
   "entry": [
-    "/home/tobias/workspace/evaluation/argon2-browser/node_modules/react-dev-utils/webpackHotDevClient.js",
     "/home/tobias/workspace/evaluation/argon2-browser/src/index.js"
   ],
   "output": {
-    "pathinfo": true,
-    "filename": "static/js/bundle.js",
+    "path": "/home/tobias/workspace/evaluation/argon2-browser/build",
+    "pathinfo": false,
+    "filename": "static/js/[name].[contenthash:8].js",
     "futureEmitAssets": true,
-    "chunkFilename": "static/js/[name].chunk.js",
+    "chunkFilename": "static/js/[name].[contenthash:8].chunk.js",
     "publicPath": "/",
     "jsonpFunction": "webpackJsonpargon2-browser",
     "globalObject": "this"
   },
   "optimization": {
-    "minimize": false,
+    "minimize": true,
     "minimizer": [
       {
         "options": {
@@ -187,7 +187,7 @@
               "presets": [
                 "/home/tobias/workspace/evaluation/argon2-browser/node_modules/babel-preset-react-app/index.js"
               ],
-              "cacheIdentifier": "development:babel-plugin-named-asset-import@0.3.6:babel-preset-react-app@9.1.2:react-dev-utils@10.2.1:react-scripts@3.4.1",
+              "cacheIdentifier": "production:babel-plugin-named-asset-import@0.3.6:babel-preset-react-app@9.1.2:react-dev-utils@10.2.1:react-scripts@3.4.1",
               "plugins": [
                 [
                   "/home/tobias/workspace/evaluation/argon2-browser/node_modules/babel-plugin-named-asset-import/index.js",
@@ -202,7 +202,7 @@
               ],
               "cacheDirectory": true,
               "cacheCompression": false,
-              "compact": false
+              "compact": true
             }
           },
           {
@@ -223,7 +223,7 @@
               ],
               "cacheDirectory": true,
               "cacheCompression": false,
-              "cacheIdentifier": "development:babel-plugin-named-asset-import@0.3.6:babel-preset-react-app@9.1.2:react-dev-utils@10.2.1:react-scripts@3.4.1",
+              "cacheIdentifier": "production:babel-plugin-named-asset-import@0.3.6:babel-preset-react-app@9.1.2:react-dev-utils@10.2.1:react-scripts@3.4.1",
               "sourceMaps": true,
               "inputSourceMap": true
             }
@@ -232,19 +232,22 @@
             "test": {},
             "exclude": {},
             "use": [
-              "/home/tobias/workspace/evaluation/argon2-browser/node_modules/style-loader/index.js",
+              {
+                "loader": "/home/tobias/workspace/evaluation/argon2-browser/node_modules/mini-css-extract-plugin/dist/loader.js",
+                "options": {}
+              },
               {
                 "loader": "/home/tobias/workspace/evaluation/argon2-browser/node_modules/css-loader/dist/cjs.js",
                 "options": {
                   "importLoaders": 1,
-                  "sourceMap": false
+                  "sourceMap": true
                 }
               },
               {
                 "loader": "/home/tobias/workspace/evaluation/argon2-browser/node_modules/postcss-loader/src/index.js",
                 "options": {
                   "ident": "postcss",
-                  "sourceMap": false
+                  "sourceMap": true
                 }
               }
             ],
@@ -253,12 +256,15 @@
           {
             "test": {},
             "use": [
-              "/home/tobias/workspace/evaluation/argon2-browser/node_modules/style-loader/index.js",
+              {
+                "loader": "/home/tobias/workspace/evaluation/argon2-browser/node_modules/mini-css-extract-plugin/dist/loader.js",
+                "options": {}
+              },
               {
                 "loader": "/home/tobias/workspace/evaluation/argon2-browser/node_modules/css-loader/dist/cjs.js",
                 "options": {
                   "importLoaders": 1,
-                  "sourceMap": false,
+                  "sourceMap": true,
                   "modules": {}
                 }
               },
@@ -266,7 +272,7 @@
                 "loader": "/home/tobias/workspace/evaluation/argon2-browser/node_modules/postcss-loader/src/index.js",
                 "options": {
                   "ident": "postcss",
-                  "sourceMap": false
+                  "sourceMap": true
                 }
               }
             ]
@@ -275,25 +281,28 @@
             "test": {},
             "exclude": {},
             "use": [
-              "/home/tobias/workspace/evaluation/argon2-browser/node_modules/style-loader/index.js",
+              {
+                "loader": "/home/tobias/workspace/evaluation/argon2-browser/node_modules/mini-css-extract-plugin/dist/loader.js",
+                "options": {}
+              },
               {
                 "loader": "/home/tobias/workspace/evaluation/argon2-browser/node_modules/css-loader/dist/cjs.js",
                 "options": {
                   "importLoaders": 3,
-                  "sourceMap": false
+                  "sourceMap": true
                 }
               },
               {
                 "loader": "/home/tobias/workspace/evaluation/argon2-browser/node_modules/postcss-loader/src/index.js",
                 "options": {
                   "ident": "postcss",
-                  "sourceMap": false
+                  "sourceMap": true
                 }
               },
               {
                 "loader": "/home/tobias/workspace/evaluation/argon2-browser/node_modules/resolve-url-loader/index.js",
                 "options": {
-                  "sourceMap": false
+                  "sourceMap": true
                 }
               },
               {
@@ -308,12 +317,15 @@
           {
             "test": {},
             "use": [
-              "/home/tobias/workspace/evaluation/argon2-browser/node_modules/style-loader/index.js",
+              {
+                "loader": "/home/tobias/workspace/evaluation/argon2-browser/node_modules/mini-css-extract-plugin/dist/loader.js",
+                "options": {}
+              },
               {
                 "loader": "/home/tobias/workspace/evaluation/argon2-browser/node_modules/css-loader/dist/cjs.js",
                 "options": {
                   "importLoaders": 3,
-                  "sourceMap": false,
+                  "sourceMap": true,
                   "modules": {}
                 }
               },
@@ -321,13 +333,13 @@
                 "loader": "/home/tobias/workspace/evaluation/argon2-browser/node_modules/postcss-loader/src/index.js",
                 "options": {
                   "ident": "postcss",
-                  "sourceMap": false
+                  "sourceMap": true
                 }
               },
               {
                 "loader": "/home/tobias/workspace/evaluation/argon2-browser/node_modules/resolve-url-loader/index.js",
                 "options": {
-                  "sourceMap": false
+                  "sourceMap": true
                 }
               },
               {
@@ -363,7 +375,18 @@
         "inject": true,
         "compile": true,
         "favicon": false,
-        "minify": "auto",
+        "minify": {
+          "removeComments": true,
+          "collapseWhitespace": true,
+          "removeRedundantAttributes": true,
+          "useShortDoctype": true,
+          "removeEmptyAttributes": true,
+          "removeStyleLinkTypeAttributes": true,
+          "keepClosingSlash": true,
+          "minifyJS": true,
+          "minifyCSS": true,
+          "minifyURLs": true
+        },
         "cache": true,
         "showErrors": true,
         "chunks": "all",
@@ -377,8 +400,13 @@
       "version": 4
     },
     {
+      "tests": [
+        {}
+      ]
+    },
+    {
       "replacements": {
-        "NODE_ENV": "development",
+        "NODE_ENV": "production",
         "PUBLIC_URL": ""
       }
     },
@@ -388,25 +416,17 @@
     {
       "definitions": {
         "process.env": {
-          "NODE_ENV": "\"development\"",
+          "NODE_ENV": "\"production\"",
           "PUBLIC_URL": "\"\""
         }
       }
     },
     {
-      "options": {},
-      "fullBuildTimeout": 200,
-      "requestTimeout": 10000
-    },
-    {
-      "options": {},
-      "logger": {},
-      "pathCache": {},
-      "fsOperations": 0,
-      "primed": false
-    },
-    {
-      "nodeModulesPath": "/home/tobias/workspace/evaluation/argon2-browser/node_modules"
+      "options": {
+        "filename": "static/css/[name].[contenthash:8].css",
+        "ignoreOrder": false,
+        "chunkFilename": "static/css/[name].[contenthash:8].chunk.css"
+      }
     },
     {
       "opts": {
@@ -425,6 +445,27 @@
       "options": {
         "resourceRegExp": {},
         "contextRegExp": {}
+      }
+    },
+    {
+      "config": {
+        "chunks": [],
+        "exclude": [
+          {},
+          {}
+        ],
+        "excludeChunks": [],
+        "importsDirectory": "",
+        "importScripts": [],
+        "importWorkboxFrom": "cdn",
+        "precacheManifestFilename": "precache-manifest.[manifestHash].js",
+        "swDest": "service-worker.js",
+        "clientsClaim": true,
+        "navigateFallback": "/index.html",
+        "navigateFallbackBlacklist": [
+          {},
+          {}
+        ]
       }
     }
   ],

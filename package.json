@@ -14,6 +14,8 @@
   "scripts": {
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
+    "preserve": "yarn build",
+    "serve": "serve build",
     "test": "react-app-rewired test"
   },
   "eslintConfig": {
@@ -35,6 +37,7 @@
     "base64-loader": "^1.0.0",
     "path": "^0.12.7",
     "react-app-rewired": "^2.1.6",
+    "serve": "^11.3.2",
     "wasm-loader": "^1.3.0"
   }
 }
