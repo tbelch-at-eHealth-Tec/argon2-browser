@@ -1,4 +1,4 @@
-import argon2 from "argon2-browser";
+const argon2 = window.argon2;
 
 export function hash(value, salt) {
   return argon2
